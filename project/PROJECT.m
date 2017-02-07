@@ -8,9 +8,9 @@ addpath('.\node_analysis');
 warning('off'); %#ok<WNOFF>
 %detection = [150, 200, 150, 205, 205; 150, 210, 150, 220, 220; 103, 103, 103, 105, 105; 80, 100, 100, 105, 110; 90, 90, 5, 105, 105; 90, 70, 5, 135, 120;];
 %clustering = [150, 150, 150, 180, 180; 150, 150, 150, 180, 180; 150, 150, 150, 150, 150; 180, 180, 180, 180, 180; 150, 150, 150, 180, 150; 200, 200, 200, 200, 200;];
-detection = [90, 70, 5, 135, 120; 120, 120, 5, 155, 110; 130, 130, 5, 195, 130; 130, 130, 10, 140, 140; 130, 130, 130, 165, 130; 130, 130, 110, 140, 140];
-clustering = [200, 200, 200, 200, 200; 200, 200, 200, 200, 200; 200, 200, 200, 200, 200; 200, 200, 200, 200, 200; 200, 200, 200, 200, 200; 200, 200, 200, 200, 200];
-cir_number = 5; % witch circuit you want to solve
+detection = [90, 70, 5, 135, 120; 120, 120, 5, 155, 110; 130, 130, 5, 195, 130; 130, 130, 10, 140, 140; 130, 130, 130, 165, 130; 130, 130, 110, 140, 140; 140, 140, 140, 200, 140; 140, 140, 140, 180, 180];
+clustering = [200, 200, 200, 200, 200; 200, 200, 200, 200, 200; 200, 200, 200, 200, 200; 200, 200, 200, 200, 200; 200, 200, 200, 200, 200; 200, 200, 200, 200, 200; 200, 200, 200, 200, 200; 200, 200, 200, 200, 200];
+cir_number = 8; % witch circuit you want to solve
 
 %% Step 2 - recognize characters
 [words, wordBox] = ocrOnCircuit(cir_number);
@@ -37,9 +37,9 @@ clear i index1 index2 x y z component_number;
 clear words iteration;
 %% Step 5 - find the nodes and centers on the circuit
 % define parameters
-vertical_margin = [30;40;40;50;40;40];
-normal_margin = [40;40;40;40;40;40];
-harris_margin = [0.12; 0.12; 0.12; 0.09; 0.12; 0.115];
+vertical_margin = [30;40;40;50;40;40;40;40];
+normal_margin = [40;40;40;40;40;40;40;40];
+harris_margin = [0.12; 0.12; 0.12; 0.09; 0.12; 0.115; 0.12; 0.12];
 corner_detector; % DEBUG HERE
 clear path1 margin j I i centers_counter euclidean_distance
 clear distances_range distances counter C wordBox
