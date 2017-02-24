@@ -2,8 +2,8 @@ lines_approved = {};
 counter = 1;
 
 % distance margin for a line to be approved
-vertical_margin = vertical_margin(cir_number);
-normal_margin = normal_margin(cir_number);
+vertical_margin = 40;
+normal_margin = 40;
 
 for i = 1:length(centers)
     y_center = centers(i,2);

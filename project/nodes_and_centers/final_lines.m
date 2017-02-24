@@ -59,4 +59,5 @@ end
 clear counter first_point i is_duplicated j length_of_line
 clear line_number lines_approved points reg_lines
 clear second_point unique_lines
+clear harris_margin
 

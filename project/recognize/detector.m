@@ -2,10 +2,10 @@
 % on a test image, then matches both features and plots them
 
 % -----------------DEBUGGING--------------------
-% circuit = rgb2gray(imread('./images/selfmade/circuits/circuit_06b.png'));
+% circuit = rgb2gray(imread('./images/selfmade/circuits/circuit_01b.png'));
 % component = rgb2gray(imread('./images/selfmade/components/current.png'));
 % 
-% detection_threshold = 140;
+% detection_threshold = 200;
 % -----------------END--------------------
 
 % ----------------PLOT CONTROL---------------

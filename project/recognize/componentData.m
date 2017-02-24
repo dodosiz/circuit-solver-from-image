@@ -9,7 +9,11 @@ function [ centers, component_number ] = componentData( type, detectionParam, cl
 path1='./images/selfmade/circuits/';
 path2='./images/selfmade/components/';
 % --------------------Load component--------------------
-component = rgb2gray(imread([path2 type '.png'])); % component image to detect
+if circuit_number ~= 9
+    component = rgb2gray(imread([path2 type '.png'])); % component image to detect
+else
+    component = imresize(rgb2gray(imread([path2 type '.png'])),0.5);
+end
 % --------------------Load circuit--------------------
 circuit = rgb2gray(imread([path1 'circuit_0' num2str(circuit_number) 'b.png'])); % circuit image used for detection
 % --------------------Find------------------------------

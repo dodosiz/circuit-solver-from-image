@@ -1,23 +1,11 @@
 % load image
 path1 = './images/selfmade/circuits/';
 I = rgb2gray(imread([path1 'circuit_0' int2str(cir_number) 'b.png'])); % circuit image used for detection
-I = imbinarize(I);
 centers = [];
 centers_counter = 1;
 % Harris corner detector
 C = corner(I);
-
-% imagesc(I)
-% hold
-% plot(C(:,1),C(:,2),'r.')
-
-%-------------DEBUGGING------------------
-% adjust this value to find correct corners
-% uncomment this
-% harris_margin = 0.115;
-% comment this
-harris_margin = harris_margin(cir_number);
-%---------------END----------------------
+harris_margin = 0.12;
 
 %% Resistors
 % find Euclidean distances from element centers
@@ -33,46 +21,6 @@ end
 % zero those points that are near to the centers
 distances_range = [];
 for j = 1:length(resistors)
-    distances_range(j) = max(distances(:,j)) - min(distances(:,j));
-    for i = 1:length(C)
-        if distances(i,j) < harris_margin * distances_range(j)
-            C(i,:) = 0;
-        end
-    end
-end
-%% Inductors
-distances = [];
-for j = 1:length(inductors)
-    centers(centers_counter,1) = inductors(j).center(1);
-    centers(centers_counter,2) = inductors(j).center(2);
-    centers_counter = centers_counter + 1;
-    for i = 1:length(C)
-        distances(i,j) = Euclidean(inductors(j).center(1),inductors(j).center(2),C(i,1),C(i,2));
-    end
-end
-% zero those points that are near to the centers
-distances_range = [];
-for j = 1:length(inductors)
-    distances_range(j) = max(distances(:,j)) - min(distances(:,j));
-    for i = 1:length(C)
-        if distances(i,j) < harris_margin * distances_range(j)
-            C(i,:) = 0;
-        end
-    end
-end
-%% Capacitors
-distances = [];
-for j = 1:length(capacitors)
-    centers(centers_counter,1) = capacitors(j).center(1);
-    centers(centers_counter,2) = capacitors(j).center(2);
-    centers_counter = centers_counter + 1;
-    for i = 1:length(C)
-        distances(i,j) = Euclidean(capacitors(j).center(1),capacitors(j).center(2),C(i,1),C(i,2));
-    end
-end
-% zero those points that are near to the centers
-distances_range = [];
-for j = 1:length(capacitors)
     distances_range(j) = max(distances(:,j)) - min(distances(:,j));
     for i = 1:length(C)
         if distances(i,j) < harris_margin * distances_range(j)
@@ -165,10 +113,5 @@ for i = 1:length(C)
     end
 end
 
-%-----------------DEBUGGING-------------------
-% Plot the points
-% imagesc(I)
-% hold
-% plot(points(:,1),points(:,2),'r.')
-% plot(centers(:,1),centers(:,2),'b.')
-%-------------------END-----------------------
+clear path1 margin j I i centers_counter euclidean_distance
+clear distances_range distances counter C wordBox

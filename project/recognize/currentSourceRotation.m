@@ -54,3 +54,4 @@ clear compFeatures component compPoints i indexPairs
 clear inlierComp inlierOriginal matchedComp matchedOriginal
 clear original originalFeatures originalPoints path1 path2
 clear sc ss tform Tinv currCenter theta_recovered
+clear plotting
