@@ -2,8 +2,12 @@
 <p>This project demonstrates a method for solving electrical dc
 circuits from an image. Methods of computer vision are used throughout
 the programm.
+</p>
+<p>
 The programm is at an initial stage and the only circuit images, which the programm
 can solve, are the ones in the directory ./images
+</p>
+<p>
 However, this is a first demonstration of the way that a programm can analyse a circuit 
 from an image. Imagine if you only could solve an electrical circuit by taking a photo
 with your smartphone, it would make the life of the electrical engineering student much
