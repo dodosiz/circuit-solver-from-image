@@ -6,7 +6,7 @@ addpath('.\node_analysis');
 
 %% Step 1 - define usefull parameters
 warning('off'); %#ok<WNOFF>
-cir_number = 8; % which circuit you want to solve
+cir_number = 1; % which circuit you want to solve
 
 %% Step 2 - recognize characters
 [words, wordBox] = ocrOnCircuit(cir_number);
