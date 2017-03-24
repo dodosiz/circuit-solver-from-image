@@ -29,6 +29,9 @@ for i = 1:length(unique_lines)
     % if the line is the longest the 1 will stay
     unique_lines{i,5} = 1;
 end
+
+% deletes an entry that consists of []
+zero_line;
 for i = 1:length(unique_lines(:,1))
     for j = (i+1):length(unique_lines(:,1))
         % centers are the same

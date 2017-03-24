@@ -1,3 +1,5 @@
+clear;
+clc;
 addpath('.\recognize');
 addpath('.\ocr_manipulations');
 addpath('.\classes');
@@ -6,7 +8,7 @@ addpath('.\node_analysis');
 
 %% Step 1 - define usefull parameters
 warning('off'); %#ok<WNOFF>
-cir_number = 1; % which circuit you want to solve
+cir_number = 10; % which circuit you want to solve, solves 1,2,3,5,6
 
 %% Step 2 - recognize characters
 [words, wordBox] = ocrOnCircuit(cir_number);

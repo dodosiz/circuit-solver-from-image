@@ -113,5 +113,7 @@ for i = 1:length(C)
     end
 end
 
+checkCorners;
+
 clear path1 margin j I i centers_counter euclidean_distance
 clear distances_range distances counter C wordBox
